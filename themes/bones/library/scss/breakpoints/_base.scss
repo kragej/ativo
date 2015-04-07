@@ -20,7 +20,7 @@ body {
 	font-size: 100%;
 	line-height: 1.5;
 	color: $text-color;
-	background-color: $gray;
+	background-color: $white;
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
 }
@@ -153,16 +153,27 @@ HEADER STYLES
 *********************/
 
 .header {
-	background-color: $black;
+	background-color: $white;
+	min-height: 50px;
+	line-height: 50px;
 }
 
-	#logo {
-		margin: 0.75em 0;
-
-		a {
-			color: $white;
+#logo {
+	display: inline-block;
+	font-family: "exo-regular";
+	font-size: 24px;
+	vertical-align: middle;
+	line-height: 50px;
+	margin-left: 30px;
+	float: left; 
+	
+	a {
+		span {
+			color: $text-color;
 		}
+		color: $cyan;
 	}
+}
 
 /*********************
 NAVIGATION STYLES
@@ -176,17 +187,25 @@ the navs on the site so our css is cleaner
 and more scalable.
 */
 
+nav {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 50px;
+	float: right;
+}
+
 .nav {
 	border-bottom: 0;
 	margin: 0;
 
 	li {
-
+		
+		margin-right: 50px;
+		
 		a {
 			display: block;
-			color: $white;
+			color: $text-color;
 			text-decoration: none;
-			padding: 0.75em;
 
 			/*
 			remember this is for mobile ONLY, so there's no need
@@ -252,14 +271,61 @@ POSTS & CONTENT STYLES
 *********************/
 
 #content {
-	margin-top: 1.5em;
+	background-image: url("http://placehold.it/2800x1000");
+	background-size: cover;
+	border-bottom: 3px solid $cyan;
 }
 
+#guides-container {
+	height: 150px;
+	width: 100%;
+	background-color: $light-gray;
+	display: -webkit-inline-flex;
+}
+
+#guides {
+	margin: auto;
+	width: 50%;
+	height: 120px;
+	display: -webkit-inline-flex;
+}
+
+.guide {
+	width: 33%;
+	text-align: center;
+	margin: auto;
+	height: 100%;
+	border-right: 1px solid $border-gray;
+	
+	&:last-child {
+		border-right: 0;
+	}
+	
+	img {
+		margin: auto;
+		height: 60px;
+		display: block;
+	}
+	
+	span {
+		color: $cyan;
+		display: block;
+		font-family: "exo-regular";
+		
+		&.guide-title {
+			margin-top: 5px;
+		}
+		
+		&.guide-description {
+			font-size: 12px;
+		}
+	}
+}
+
+
 		.hentry {
-			background-color: $white;
-			border-radius: 3px;
+			//background-color: $white;
 			margin-bottom: 1.5em;
-			border: 1px solid $border-color;
 
 			header {
 				border-bottom: 1px solid $light-gray;
@@ -887,3 +953,79 @@ FOOTER STYLES
 
 
 	.copyright {}
+	
+/*********************
+TANKSTATION styles
+*********************/
+.price-table-column {
+	//border: 1px solid;
+	width: 220px;
+	min-height: 400px;
+	position: relative;
+	background-color: $white;
+	display: inline-block;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	
+	.price-table-header {
+		color: $cyan;
+		text-align: center;
+		font-size: 26px;
+		width: 100%;
+		min-height: 65px;
+		line-height: 65px;
+		border-bottom: 1px solid $border-gray;
+		
+		.price-table-header-value {
+			display: inline-block;
+			vertical-align: middle;
+			line-height: normal;
+			font-family: exo-regular;
+		}
+	}
+	
+	.price-table-cell {
+		color: $black;
+		padding-left: 25px;
+		font-size: 16px;
+		width: 100%;
+		min-height: 55px;
+		line-height: 55px;
+		border-bottom: 1px solid $border-gray;
+		
+		.price-table-cell-value {
+			display: inline-block;
+			vertical-align: middle;
+			line-height: normal;
+			font-family: exo-light;
+		}
+	}
+	
+	.price-table-footer {
+		background-color: $cyan;
+		width: 100%;
+		min-height: 65px;
+		position: absolute;
+		bottom: 0;
+		
+		.price-text {
+			color: $black;
+			font-size: 12px;
+			font-family: exo-bold;
+			position: absolute;
+			left: 30px;
+			bottom: 10px;
+			vertical-align: bottom;
+		}
+		
+		.price-value {
+			color: $white;
+			font-size: 30px;
+			font-family: exo-regular;
+			position: absolute;
+			bottom: 3px;
+			left: 100px;
+		}
+	}
+
+}
