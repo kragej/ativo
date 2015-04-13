@@ -966,6 +966,8 @@ TANKSTATION styles
 	display: inline-block;
 	margin-right: 20px;
 	margin-bottom: 20px;
+	overflow: hidden;
+	vertical-align: top;
 	
 	.price-table-header {
 		color: $cyan;
@@ -986,18 +988,24 @@ TANKSTATION styles
 	
 	.price-table-cell {
 		color: $black;
-		padding-left: 25px;
 		font-size: 16px;
+		padding: 10px 20px;
 		width: 100%;
-		min-height: 55px;
-		line-height: 55px;
 		border-bottom: 1px solid $border-gray;
 		
 		.price-table-cell-value {
-			display: inline-block;
-			vertical-align: middle;
-			line-height: normal;
+			display: block;
 			font-family: exo-light;
+			line-height: 22px;
+			width: 100%;
+		}
+		
+		.price-table-cell-info {
+			color: grey;
+			font-family: exo-light;
+			font-size: 12px;
+			vertical-align: middle;
+			width: 100%;
 		}
 	}
 	
@@ -1025,6 +1033,17 @@ TANKSTATION styles
 			position: absolute;
 			bottom: 3px;
 			left: 100px;
+		}
+		
+		.price-readmore {
+			color: $white;
+			font-size: 30px;
+			font-family: exo-regular;
+			position: absolute;
+			bottom: 3px;
+			left: 30px;
+			right: 30px;
+			text-align: center;
 		}
 	}
 

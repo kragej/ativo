@@ -1,4 +1,4 @@
-/* Made with Bones: http://themble.com/bones :) */
+/*! Made with Bones: http://themble.com/bones :) */
 /******************************************************************
 Site Name:
 Author:
@@ -637,11 +637,6 @@ p {
   -webkit-hyphenate-before: 2;
   -webkit-hyphenate-after: 3;
   hyphenate-lines: 3;
-  -webkit-font-feature-settings: "liga", "dlig";
-  -moz-font-feature-settings: "liga=1, dlig=1";
-  -ms-font-feature-settings: "liga", "dlig";
-  -o-font-feature-settings: "liga", "dlig";
-  font-feature-settings: "liga", "dlig";
 }
 
 /******************************************************************
@@ -1550,14 +1545,14 @@ LINK STYLES
 *********************/
 /* line 82, ../scss/breakpoints/_base.scss */
 a, a:visited {
-  color: #f01d4f;
+  color: #66bfbc;
   /* on hover */
   /* on click */
   /* mobile tap color */
 }
 /* line 86, ../scss/breakpoints/_base.scss */
 a:hover, a:focus, a:visited:hover, a:visited:focus {
-  color: #d10e3c;
+  color: #49aeab;
 }
 /* line 96, ../scss/breakpoints/_base.scss */
 a:link, a:visited:link {
@@ -2245,8 +2240,10 @@ TANKSTATION styles
   display: inline-block;
   margin-right: 20px;
   margin-bottom: 20px;
+  overflow: hidden;
+  vertical-align: top;
 }
-/* line 970, ../scss/breakpoints/_base.scss */
+/* line 972, ../scss/breakpoints/_base.scss */
 .price-table-column .price-table-header {
   color: #66bfbd;
   text-align: center;
@@ -2256,31 +2253,37 @@ TANKSTATION styles
   line-height: 65px;
   border-bottom: 1px solid #eaedf2;
 }
-/* line 979, ../scss/breakpoints/_base.scss */
+/* line 981, ../scss/breakpoints/_base.scss */
 .price-table-column .price-table-header .price-table-header-value {
   display: inline-block;
   vertical-align: middle;
   line-height: normal;
   font-family: exo-regular;
 }
-/* line 987, ../scss/breakpoints/_base.scss */
+/* line 989, ../scss/breakpoints/_base.scss */
 .price-table-column .price-table-cell {
   color: #323944;
-  padding-left: 25px;
   font-size: 16px;
+  padding: 10px 20px;
   width: 100%;
-  min-height: 55px;
-  line-height: 55px;
   border-bottom: 1px solid #eaedf2;
 }
 /* line 996, ../scss/breakpoints/_base.scss */
 .price-table-column .price-table-cell .price-table-cell-value {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: normal;
+  display: block;
   font-family: exo-light;
+  line-height: 22px;
+  width: 100%;
 }
-/* line 1004, ../scss/breakpoints/_base.scss */
+/* line 1003, ../scss/breakpoints/_base.scss */
+.price-table-column .price-table-cell .price-table-cell-info {
+  color: grey;
+  font-family: exo-light;
+  font-size: 12px;
+  vertical-align: middle;
+  width: 100%;
+}
+/* line 1012, ../scss/breakpoints/_base.scss */
 .price-table-column .price-table-footer {
   background-color: #66bfbd;
   width: 100%;
@@ -2288,7 +2291,7 @@ TANKSTATION styles
   position: absolute;
   bottom: 0;
 }
-/* line 1011, ../scss/breakpoints/_base.scss */
+/* line 1019, ../scss/breakpoints/_base.scss */
 .price-table-column .price-table-footer .price-text {
   color: #323944;
   font-size: 12px;
@@ -2298,7 +2301,7 @@ TANKSTATION styles
   bottom: 10px;
   vertical-align: bottom;
 }
-/* line 1021, ../scss/breakpoints/_base.scss */
+/* line 1029, ../scss/breakpoints/_base.scss */
 .price-table-column .price-table-footer .price-value {
   color: white;
   font-size: 30px;
@@ -2306,6 +2309,17 @@ TANKSTATION styles
   position: absolute;
   bottom: 3px;
   left: 100px;
+}
+/* line 1038, ../scss/breakpoints/_base.scss */
+.price-table-column .price-table-footer .price-readmore {
+  color: white;
+  font-size: 30px;
+  font-family: exo-regular;
+  position: absolute;
+  bottom: 3px;
+  left: 30px;
+  right: 30px;
+  text-align: center;
 }
 
 /*********************

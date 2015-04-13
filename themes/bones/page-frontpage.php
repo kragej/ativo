@@ -20,82 +20,46 @@
 
 							<section class="entry-content cf" itemprop="articleBody">
 							
-							<div class="price-table-column">
-								<div class="price-table-header">
-									<span class="price-table-header-value">HJEMMESIDE</span>
-								</div>
-								<div class="price-table-cell">
-									<span class="price-table-cell-value">Nemt, personligt</span>
-								</div>
-								<div class="price-table-cell">
-									<span class="price-table-cell-value">Nemt, personligt</span>
-								</div>
-								<div class="price-table-cell">
-									<span class="price-table-cell-value">Nemt, personligt</span>
-								</div>
-								<div class="price-table-footer">
-									<span class="price-text">Priser fra:</span>
-									<span class="price-value">3.500,-</span>
-								</div>
-							</div>
 							
-							<div class="price-table-column">
-								<div class="price-table-header">
-									<span class="price-table-header-value">WEBSHOP</span>
-								</div>
-								<div class="price-table-cell">
-									<span class="price-table-cell-value">Nemt, personligt</span>
-								</div>
-								<div class="price-table-cell">
-									<span class="price-table-cell-value">Nemt, personligt</span>
-								</div>
-								<div class="price-table-cell">
-									<span class="price-table-cell-value">Nemt, personligt</span>
-								</div>
-								<div class="price-table-footer">
-									<span class="price-text">Priser fra:</span>
-									<span class="price-value">3.500,-</span>
-								</div>
-							</div>
-							
-							<div class="price-table-column">
-								<div class="price-table-header">
-									<span class="price-table-header-value">SERVICES</span>
-								</div>
-								<div class="price-table-cell">
-									<span class="price-table-cell-value">Nemt, personligt</span>
-								</div>
-								<div class="price-table-cell">
-									<span class="price-table-cell-value">Nemt, personligt</span>
-								</div>
-								<div class="price-table-cell">
-									<span class="price-table-cell-value">Nemt, personligt</span>
-								</div>
-								<div class="price-table-footer">
-									<span class="price-text">Priser fra:</span>
-									<span class="price-value">3.500,-</span>
-								</div>
-							</div>
-							
-							<div class="price-table-column">
-								<div class="price-table-header">
-									<span class="price-table-header-value">APPS</span>
-								</div>
-								<div class="price-table-cell">
-									<span class="price-table-cell-value">Nemt, personligt</span>
-								</div>
-								<div class="price-table-cell">
-									<span class="price-table-cell-value">Nemt, personligt</span>
-								</div>
-								<div class="price-table-cell">
-									<span class="price-table-cell-value">Nemt, personligt</span>
-								</div>
-								<div class="price-table-footer">
-									<span class="price-text">Priser fra:</span>
-									<span class="price-value">3.500,-</span>
-								</div>
-							</div>
-							
+							<?php 
+							// check if any products are created
+							if( have_rows('product') ):
+
+								// loop through products
+								while( have_rows('product') ): the_row(); ?>
+									<div class="price-table-column">
+										
+										<div class="price-table-header">
+											<a href="<?php the_sub_field('product_link'); ?>">
+											<span class="price-table-header-value"><h3><?php the_sub_field('product_name'); ?></h3></span>
+											</a>
+										</div>
+										
+										<?php 
+										// check if any product items exists
+										if( have_rows('product_items') ):
+
+											// loop through product items
+											while( have_rows('product_items') ): the_row(); ?>
+												
+												<div class="price-table-cell <?php the_sub_field('class'); ?>">
+													<span class="price-table-cell-value"><?php the_sub_field('label'); ?></span>
+													<span class="price-table-cell-info"><?php the_sub_field('description'); ?></span>
+												</div>
+												
+											<?php endwhile; ?>
+										<?php endif; ?>
+									
+										<div class="price-table-footer">
+											<?php if(get_sub_field('price_label') == 'from') { ?> <span class="price-text">Priser fra:</span><span class="price-value"><?php the_sub_field('product_price'); ?></span><?php } ?>
+											<?php if(get_sub_field('price_label') == 'more') { ?> <span class="price-readmore">Læs Mere</span><?php } ?>
+											<?php if(get_sub_field('price_label') == 'none') { ?> <span class="price-value"><?php the_sub_field('product_price'); ?></span><?php } ?>
+										</div>
+									
+									</div>	
+
+								<?php endwhile; ?>
+							<?php endif; ?>
 								
 							</section>
 
