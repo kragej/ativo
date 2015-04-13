@@ -242,6 +242,27 @@ function bones_fonts() {
   wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
 }
 
+function add_span_to_title($input_content)
+{
+	if(str_word_count($input_content) > 3)
+	{
+		$str_length=0;
+		$count=0;
+		$word_array=str_word_count($input_content,1);
+		foreach($word_array as $word)
+		{
+			if($count++ > 1) break;
+			$str_length += strlen($word);
+		}
+		$mod_con_title = "<span>".substr_replace($input_content,"</span> ", strpos($input_content," ",$str_length),1);
+	}
+	else if(str_word_count($input_content) > 1)
+		$mod_con_title = "<span>".substr_replace($input_content,"</span> ", strpos($input_content," ",0),1);
+	else $mod_con_title = $input_content;
+
+	return $mod_con_title;
+}
+
 add_action('wp_enqueue_scripts', 'bones_fonts');
 
 // Enable support for HTML5 markup.
