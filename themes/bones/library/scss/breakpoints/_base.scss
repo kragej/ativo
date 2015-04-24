@@ -958,7 +958,6 @@ FOOTER STYLES
 TANKSTATION styles
 *********************/
 .price-table-column {
-	//border: 1px solid;
 	width: 220px;
 	min-height: 400px;
 	position: relative;
@@ -978,6 +977,18 @@ TANKSTATION styles
 		line-height: 65px;
 		border-bottom: 1px solid $border-gray;
 		
+		&.slim {
+			min-height: 52px;
+			line-height: 2px;
+			border-top: 5px solid $product-gray;
+			
+			h3 {
+				font-size: 1em;
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+		}
+		
 		.price-table-header-value {
 			display: inline-block;
 			vertical-align: middle;
@@ -986,12 +997,47 @@ TANKSTATION styles
 		}
 	}
 	
+	.price-table-price-row {
+		color: $white;
+		text-align: center;
+		font-size: 30px;
+		width: 100%;
+		min-height: 80px;
+		line-height: 80px;
+		border-bottom: 1px solid $border-gray;
+		
+		&.gray {
+			background-color: $product-gray;
+		}
+		&.blue {
+			background-color: $product-blue;
+		}
+		&.green {
+			background-color: $product-green;
+		}
+	}
+	
+	.price-table-description {
+		width: 100%;
+		min-height: 80px;
+		background-color: $white;
+		border-bottom: 1px solid $border-gray;
+		padding: 10px 20px;
+	}
+	
 	.price-table-cell {
 		color: $black;
 		font-size: 16px;
 		padding: 10px 20px;
 		width: 100%;
 		border-bottom: 1px solid $border-gray;
+		
+		&.checkmark {
+			padding-left: 30px;
+			background-image: url('../images/checkmark.png');
+			background-repeat: no-repeat;
+			background-position: 5px center;
+		}
 		
 		.price-table-cell-value {
 			display: block;
