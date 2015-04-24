@@ -259,7 +259,9 @@ nav {
 	li.current_page_item,
 	li.current_page_ancestor {
 
-		a {}
+		a {
+			color: $cyan;
+		}
 
 	}  /* end current highlighters */
 
