@@ -44,7 +44,8 @@
 												
 												<div class="price-table-cell <?php the_sub_field('class'); ?>">
 													<span class="price-table-cell-value"><?php the_sub_field('label'); ?></span>
-													<span class="price-table-cell-info"><?php the_sub_field('description'); ?></span>
+													<span class="price-table-cell-expand">+</span>
+													<div class="price-table-cell-info"><?php the_sub_field('description'); ?></div>
 												</div>
 												
 											<?php endwhile; ?>

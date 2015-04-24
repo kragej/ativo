@@ -104,6 +104,10 @@ function loadGravatars() {
 	}
 } // end function
 
+jQuery('.price-table-cell-expand').click(function() {
+	jQuery(this).next('.price-table-cell-info').slideToggle();
+});
+
 
 /*
  * Put all your regular jQuery in here.
