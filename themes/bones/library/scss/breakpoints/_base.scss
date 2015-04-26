@@ -75,6 +75,12 @@ LAYOUT & GRID STYLES
 	margin: 0 auto;
 }
 
+.wrap-full {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
 /*********************
 LINK STYLES
 *********************/
@@ -272,17 +278,29 @@ nav {
 POSTS & CONTENT STYLES
 *********************/
 
+
 #content {
-	background-image: url("http://placehold.it/2800x1000");
-	background-size: cover;
 	border-bottom: 3px solid $cyan;
 }
 
+#inner-content {
+    margin-top: 90px;
+}
+
+#references {
+	min-height: 100px;
+	width: 100%;
+	background-color: $reference-gray;
+
+}
+
+
 #guides-container {
-	height: 150px;
 	width: 100%;
 	background-color: $light-gray;
 	display: -webkit-inline-flex;
+	padding: 30px 0 60px;
+	border-bottom: 3px solid $cyan;
 }
 
 #guides {
@@ -298,6 +316,7 @@ POSTS & CONTENT STYLES
 	margin: auto;
 	height: 100%;
 	border-right: 1px solid $border-gray;
+	display: inline-block;
 	
 	&:last-child {
 		border-right: 0;
@@ -305,7 +324,8 @@ POSTS & CONTENT STYLES
 	
 	img {
 		margin: auto;
-		height: 60px;
+		max-width: 100%;
+		height: auto;
 		display: block;
 	}
 	
@@ -330,13 +350,11 @@ POSTS & CONTENT STYLES
 			margin-bottom: 1.5em;
 
 			header {
-				border-bottom: 1px solid $light-gray;
 				padding: 1.5em;
 			}
 
 			footer {
 				padding: 1.5em;
-				border-top: 1px solid $light-gray;
 
 				p {
 					margin: 0;
@@ -353,7 +371,7 @@ POSTS & CONTENT STYLES
 
 		.single-title {}
 
-		.page-title {}
+		.page-title { color: white; }
 
 		.entry-title {}
 
@@ -955,18 +973,51 @@ FOOTER STYLES
 
 
 	.copyright {}
-	
+
+/*********************
+PRODUCT CONTAINER and BANNER styles
+*********************/
+
+.products-container {
+	margin: 75px 0 45px;
+	display: inline-block;
+	text-align: left;
+}
+
+.banner-background {
+	background-image: url("../images/background-forest.jpg");
+	background-size: cover;
+	border-bottom: 3px solid $cyan;
+}
+
+.page-banner  {
+	background-image: url("../images/background-forest.jpg");
+	background-size: cover;
+	border-bottom: 3px solid $cyan;
+	position: absolute;
+	width: 100%;
+	min-height: 280px;
+	z-index: -10;
+	top: 0;
+}
+
+
+
 /*********************
 TANKSTATION styles
 *********************/
+
+.price-table-column:last-child {
+    margin-right: 0;
+}
+
 .price-table-column {
-	width: 220px;
+	width: 310px;
 	min-height: 400px;
 	position: relative;
-	background-color: $white;
+	background-color: $light-gray;
 	display: inline-block;
-	margin-right: 20px;
-	margin-bottom: 20px;
+	margin: 0 20px 20px 0;
 	overflow: hidden;
 	vertical-align: top;
 	
@@ -1030,35 +1081,48 @@ TANKSTATION styles
 	.price-table-cell {
 		color: $black;
 		font-size: 16px;
-		padding: 10px 20px;
+		padding: 10px 0;
 		width: 100%;
 		border-bottom: 1px solid $border-gray;
+		border-top: 1px solid $border-shade;
 		
 		&.checkmark {
 			padding-left: 30px;
 			background-image: url('../images/checkmark.png');
 			background-repeat: no-repeat;
-			background-position: 5px 15px;
+			background-position: 19px 15px;
 		}
 		
 		.price-table-cell-value {
 			display: inline-block;
 			font-family: exo-light;
 			line-height: 22px;
-			width: 90%;
-		}
-		.price-table-cell-expand {
-			display: inline-block;
+			width: 100%;
+			padding: 0 20px;
 			cursor: pointer;
+			position: relative;
 		}
+		
+		.price-table-cell-value:after {
+			position: absolute;
+			right: 20px;
+			top: 0px;
+			content: "+";
+			color: black;
+			font-size: 16px;
+			font-weight: 500;
+		}
+		
+		.toggle-opened:after { content: "-"; }
 		
 		.price-table-cell-info {
 			color: grey;
+			display: none;
 			font-family: exo-light;
 			font-size: 12px;
+			padding: 10px 20px;
 			vertical-align: middle;
 			width: 100%;
-			display: none;
 		}
 	}
 	

@@ -104,14 +104,17 @@ function loadGravatars() {
 	}
 } // end function
 
-jQuery('.price-table-cell-expand').click(function() {
-	jQuery(this).next('.price-table-cell-info').slideToggle();
-});
-
-
 /*
  * Put all your regular jQuery in here.
 */
+
+//toggle details function
+jQuery('.price-table-cell-value').click(function() {
+	jQuery(this).next('.price-table-cell-info').slideToggle("fast");
+	jQuery(this).toggleClass( "toggle-opened" );
+});
+
+
 jQuery(document).ready(function($) {
 
   /*

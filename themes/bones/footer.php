@@ -1,5 +1,26 @@
-			<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+			
+			<?php
+			if( have_rows('related_items') ): ?>
+				<div id="guides-container">
+					<div id="guides">
+						<?php
+						while ( have_rows('related_items') ) : the_row(); ?>
 
+						<a class="guide" href="<?php the_sub_field('link'); ?>">
+							<img src="<?php the_sub_field('icon'); ?>" alt="<?php the_sub_field('title'); ?>" />
+							<span class="guide-title"><?php the_sub_field('title'); ?></span>
+							<span class="guide-description"></span>
+						</a>
+							
+						<?php endwhile; ?>
+					</div>
+				</div>
+			<?php endif; ?>
+			
+			<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+			
+			<div id="references"></div>
+			
 				<div id="inner-footer" class="wrap cf">
 
 					<nav role="navigation">

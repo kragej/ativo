@@ -7,21 +7,14 @@
 ?>
 
 <?php get_header(); ?>
+			
+			<div class="wrap-full banner-background cf" style="<?php if( get_field('background_banner')){ echo "background-image: url('". get_field('background_banner')."')"; } ?>">
+				
+				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			<div id="content">
-
-				<div id="inner-content" class="wrap cf">
-
-					<main id="main" class="m-all t-all d-all cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-
-						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-						<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-
-							<section class="entry-content cf" itemprop="articleBody">
-							
-							
-							<?php 
+					<div class="products-container cf">
+					
+					<?php 
 							// check if any products are created
 							if( have_rows('product') ):
 
@@ -58,7 +51,6 @@
 												
 												<div class="price-table-cell <?php the_sub_field('class'); ?>">
 													<span class="price-table-cell-value"><?php the_sub_field('label'); ?></span>
-													<span class="price-table-cell-expand">+</span>
 													<div class="price-table-cell-info"><?php the_sub_field('description'); ?></div>
 												</div>
 												
@@ -69,35 +61,50 @@
 
 								<?php endwhile; ?>
 							<?php endif; ?>
-								
-							</section>
+						
+					</div>
 
-						</article>
+				<?php endwhile; endif; ?>
 
-						<?php endwhile; endif; ?>
-
-					</main>
-				</div> <!-- #inner-content -->
-			</div> <!-- #content -->
+			</div>
 			
-			<div id="guides-container">
-				<div id="guides">
-					<div class="guide">
-						<img src="<?php bloginfo('template_directory'); ?>/library/images/website-icon.png" alt="Webshop - vi designer din online identitet" />
-						<span class="guide-title">HJEMMESIDE</span>
-						<span class="guide-description">Vi designer din online identitet</span>
-					</div>
-					<div class="guide">
-						<img src="<?php bloginfo('template_directory'); ?>/library/images/webshop-icon.png" alt="Webshop - vi designer din online identitet" />
-						<span class="guide-title">WEBSHOP</span>
-						<span class="guide-description">Vi designer din online forretning</span>
-					</div>
-					<div class="guide">
-						<img src="<?php bloginfo('template_directory'); ?>/library/images/app-icon.png" alt="Webshop - vi designer din online identitet" />
-						<span class="guide-title">TRYKSAGER</span>
-						<span class="guide-description">Vi designer dine tryksager</span>
-					</div>
+			<div id="content" style="display: none;"> <!-- hidden for now -->
+
+				<div id="inner-content" class="wrap cf">
+
+						<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+
+							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+
+								<header class="article-header">
+
+									<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
+
+								</header> <?php // end article header ?>
+
+								<section class="entry-content cf" itemprop="articleBody">
+									<?php the_content(); ?>
+								</section> <?php // end article section ?>
+
+								<footer class="article-footer cf">
+
+								</footer>
+
+								<?php comments_template(); ?>
+
+							</article>
+
+							<?php endwhile; endif; ?>
+
+						</main>
+
+						<!--
+						<?php get_sidebar(); ?>
+						-->
 				</div>
+
 			</div>
 
 <?php get_footer(); ?>
