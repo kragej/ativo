@@ -11,6 +11,13 @@ and will be used across all viewports.
 
 ******************************************************************/
 
+
+/*********************
+STUPID FIXES THAT NEEDS TO BE SOLVED
+*********************/
+.nav li { float: left !important; } /* make sure menu works on phone */
+
+
 /*********************
 GENERAL STYLES
 *********************/
