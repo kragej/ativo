@@ -23,9 +23,9 @@
 									<div class="price-table-column">
 										
 										<div class="price-table-header slim">
-											<a href="<?php the_sub_field('product_link'); ?>">
+											<?php if(get_sub_field('product_link')) { ?><a href="<?php the_sub_field('product_link'); ?>"><?php } ?>
 											<span class="price-table-header-value"><h3><?php the_sub_field('product_name'); ?></h3></span>
-											</a>
+											<?php if(get_sub_field('product_link')) { ?></a><?php } ?>
 										</div>
 										
 										<div class="price-table-price-row <?php the_sub_field('product_color'); ?>">

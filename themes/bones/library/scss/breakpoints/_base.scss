@@ -1157,6 +1157,10 @@ TANKSTATION styles
 		position: absolute;
 		bottom: 0;
 		
+		a {
+			text-decoration: none;
+		}
+		
 		.price-value {
 			color: $white;
 			bottom: 8px;
@@ -1166,12 +1170,12 @@ TANKSTATION styles
 			right: 50px;
 		}
 		
-		.price-readmore {
+		.price-readmore, .price-contact {
 			color: $white;
 			font-size: 30px;
 			font-family: exo-regular;
 			position: absolute;
-			bottom: 3px;
+			bottom: 8px;
 			left: 30px;
 			right: 30px;
 			text-align: center;
