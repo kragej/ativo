@@ -29,7 +29,7 @@
 										</div>
 										
 										<div class="price-table-price-row <?php the_sub_field('product_color'); ?>">
-											<?php if(get_sub_field('price_label') == 'from') { ?> <span class="price-text">Priser fra:</span><span class="price-value"><?php the_sub_field('product_price'); ?></span><?php } ?>
+											<?php if(get_sub_field('price_label') == 'from') { ?> <span class="price-value price-from"><?php the_sub_field('product_price'); ?></span><?php } ?>
 											<?php if(get_sub_field('price_label') == 'more') { ?> <span class="price-readmore">Læs Mere</span><?php } ?>
 											<?php if(get_sub_field('price_label') == 'none') { ?> <span class="price-value"><?php the_sub_field('product_price'); ?></span><?php } ?>
 										</div>
