@@ -979,15 +979,18 @@ PRODUCT CONTAINER and BANNER styles
 *********************/
 
 .products-container {
-	margin: 75px 0 45px;
-	display: inline-block;
-	text-align: left;
+    display: block;
+    margin: 75px 0 45px;
+    text-align: center;
+    width: 100%;
 }
 
 .banner-background {
-	background-image: url("../images/background-forest.jpg");
-	background-size: cover;
-	border-bottom: 3px solid $cyan;
+    background-attachment: fixed;
+    background-image: url("../images/background-forest.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 3px solid #66bfbd;
 }
 
 .page-banner  {
@@ -1012,14 +1015,17 @@ TANKSTATION styles
 }
 
 .price-table-column {
-	width: 310px;
-	min-height: 400px;
-	position: relative;
-	background-color: $light-gray;
-	display: inline-block;
-	margin: 0 20px 20px 0;
-	overflow: hidden;
-	vertical-align: top;
+		background-color: $light-gray;
+		display: inline-block;
+		margin: 0 1.2% 20px 0;
+		max-width: 310px;
+		min-height: 400px;
+		min-width: 255px;
+		overflow: hidden;
+		position: relative;
+		text-align: left;
+		vertical-align: top;
+		width: 23%;
 	
 	.price-table-header {
 		color: $cyan;
