@@ -36,6 +36,7 @@
 		<?php // end of wordpress head ?>
 
 		<?php // drop Google Analytics Here ?>
+		<meta name="google-site-verification" content="FVm4uqUAGmDy2sTUlSuBeaG3Ep-dzcEJ6fbNrUDSo4o" />
 		<?php // end analytics ?>
 
 	</head>
