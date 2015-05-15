@@ -70,4 +70,24 @@ probably best not to use it. I mean, were you going to anyway? */
 	box-sizing:         $type;
 }
 
+/*********************
+ICONS
+*********************/
 
+$icons: (
+    tryllehat: "http://placehold.it/105x105.png",
+);
+
+	
+// Setup a class name for each icon
+@each $key, $value in $icons {
+    .icon-#{$key} {
+        background-image: url('#{$value}');
+		float: left;	
+    }
+}
+
+.icon-medium {
+	width: 105px;
+	height: 105px;
+}
