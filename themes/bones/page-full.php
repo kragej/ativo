@@ -1,25 +1,19 @@
 <?php
 /*
- Template Name: Front Page Template
+ Template Name: Full width page
  *
-
 */
 ?>
 
 <?php get_header(); ?>
-
-			<div class="wrap-full banner-frontpage banner-background cf" style="<?php if( get_field('background_banner')){ echo "background-image: url('". get_field('background_banner')."')"; } ?>">
 			
-				<div class="tagline"><?php the_field('tagline'); ?></div>
+			<div class="page-banner cf" style="<?php if( get_field('background_banner')){ echo "background-image: url('". get_field('background_banner')."')"; } ?>"></div>
 			
-			</div>
-
-
-			<div id="content" style="display: none;"> <!-- hidden for now -->
+			<div id="content">
 
 				<div id="inner-content" class="wrap cf">
 
-						<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+						<main id="main" class="m-all t-all d-all cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -28,6 +22,12 @@
 								<header class="article-header">
 
 									<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
+
+									<!--
+									<p class="byline vcard">
+										<?php printf( __( 'Posted', 'bonestheme').' <time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time> '.__( 'by',  'bonestheme').' <span class="author">%3$s</span>', get_the_time('Y-m-j'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
+									</p>
+									-->
 
 								</header> <?php // end article header ?>
 
@@ -46,11 +46,12 @@
 							<?php endwhile; endif; ?>
 
 						</main>
+						
+						
 
-						<!--
-						<?php get_sidebar(); ?>
-						-->
 				</div>
+				
+				<?php include (TEMPLATEPATH . '/contact-ribbon.php'); ?>
 
 			</div>
 
