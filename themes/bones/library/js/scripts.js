@@ -104,6 +104,7 @@ function loadGravatars() {
 	}
 } // end function
 
+
 /*
  * Put all your regular jQuery in here.
 */
@@ -113,6 +114,37 @@ function loadGravatars() {
 	jQuery(this).next('.price-table-cell-info').slideToggle("fast");
 	jQuery(this).toggleClass( "toggle-opened" );
 });*/
+
+
+//Menu Shrink Function
+jQuery(document).ready(function($) {
+  $('#header-wrap').data('size','big');
+});
+
+(function($) {
+$(window).scroll(function(){
+if($(document).scrollTop() > 0)
+{
+    if($('#header-wrap').data('size') == 'big')
+    {
+        $('#header-wrap').data('size','small');
+        $('#header-wrap').stop().animate({ height:'50px'},600);
+        $('#header-wrap nav').stop().animate({ 'line-height':'57px'},600);
+        $('#logo img').stop().animate({ height:'44px'},600);
+    }
+}
+else
+  {
+    if($('#header-wrap').data('size') == 'small')
+      {
+        $('#header-wrap').data('size','big');
+        $('#header-wrap nav').stop().animate({ 'line-height':'90px' },500);
+        $('#logo img').stop().animate({ height:'77px' },500);
+				$('#header-wrap').stop().animate({ height:'90px' },500);
+      }  
+  }
+});
+})(jQuery);
 
 
 jQuery(document).ready(function($) {

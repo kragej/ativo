@@ -1,8 +1,7 @@
 <?php
 /*
- Template Name: Websites Template
+ Template Name: Products Template
  *
-
 */
 ?>
 
@@ -14,21 +13,23 @@
 
 					<div class="products-container cf">
 					
-					<?php 
+						<h1><?php the_title(); ?> <span class="tagline"><?php the_field('tagline'); ?></span></h1>
+					
+					  <?php 
 							// check if any products are created
 							if( have_rows('product') ):
 
 								// loop through products
 								while( have_rows('product') ): the_row(); ?>
-									<div class="price-table-column">
+									<div class="price-table-column <?php the_sub_field('product_color'); ?>">
 										
 										<div class="price-table-header slim">
 											<?php if(get_sub_field('product_link')) { ?><a href="<?php the_sub_field('product_link'); ?>"><?php } ?>
-											<span class="price-table-header-value"><h3><?php the_sub_field('product_name'); ?></h3></span>
+											<span class="price-table-header-value"><h2><?php the_sub_field('product_name'); ?></h2></span>
 											<?php if(get_sub_field('product_link')) { ?></a><?php } ?>
 										</div>
 										
-										<div class="price-table-price-row <?php the_sub_field('product_color'); ?>">
+										<div class="price-table-price-row">
 											<?php if(get_sub_field('price_label') == 'from') { ?> <span class="price-value price-from"><?php the_sub_field('product_price'); ?>,-</span><?php } ?>
 											<?php if(get_sub_field('price_label') == 'more') { ?> <span class="price-readmore"><?php the_sub_field('product_price'); ?></span><?php } ?>
 											<?php if(get_sub_field('price_label') == 'none') { ?> <span class="price-value"><?php the_sub_field('product_price'); ?>,-</span><?php } ?>
@@ -59,6 +60,12 @@
 											<?php endwhile; ?>
 										<?php endif; ?>
 									
+									<div class="price-table-footer">
+										<?php if(get_sub_field('product_link')) { ?><a href="<?php the_sub_field('product_link'); ?>"><?php } ?>
+											<span class="price-table-footer-value">Læs mere</span></a>
+										<?php if(get_sub_field('product_link')) { ?></a><?php } ?>
+									</div>
+									
 									</div>	
 
 								<?php endwhile; ?>
@@ -69,6 +76,8 @@
 				<?php endwhile; endif; ?>
 
 			</div>
+			
+			<?php include (TEMPLATEPATH . '/contact-ribbon.php'); ?>
 			
 			<div id="content">
 
@@ -87,8 +96,6 @@
 								<footer class="article-footer cf">
 
 								</footer>
-
-								<?php comments_template(); ?>
 
 							</article>
 

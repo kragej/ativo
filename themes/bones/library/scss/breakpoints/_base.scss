@@ -23,9 +23,9 @@ GENERAL STYLES
 *********************/
 
 body {
-	font-family: $lato;
-	font-size: 100%;
-	line-height: 1.5;
+	font-family: $font-text;
+	font-size: 90%;
+	line-height: 1.6;
 	color: $text-color;
 	background-color: $white;
   	-webkit-font-smoothing: antialiased;
@@ -94,6 +94,7 @@ LINK STYLES
 
 a, a:visited {
 	color: $link-color;
+	text-decoration: none;
 
 	/* on hover */
 	&:hover, &:focus {
@@ -123,6 +124,7 @@ H1, H2, H3, H4, H5 STYLES
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	text-rendering: optimizelegibility;
 	font-weight: 500;
+	letter-spacing: 1px;
 	/*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -143,6 +145,7 @@ h2, .h2 {
 	font-size: 1.75em;
 	line-height: 1.4em;
 	margin-bottom: 0.375em;
+	font-family: $font-header;
 }
 
 h3, .h3 {
@@ -160,25 +163,54 @@ h5, .h5 {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 }
-
+ 
 /*********************
 HEADER STYLES
 *********************/
 
-.header {
-	background-color: $white;
-	min-height: 50px;
+#header-wrap {
+	width:100%;
+	height: $menu-maxheight;
 	line-height: 50px;
+	background-color: $white;
+	
 }
+
+#header-wrap nav {
+	line-height: $menu-maxheight;
+}
+
+#inner-header {
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+		border-bottom: 1px solid #f1f1f1;
+}
+
+#header-wrap nav li a { position: relative; }
+#header-wrap nav li a:hover:after { border-bottom: 3px solid $ativo-blue; width: 100%; content: ""; display: block; position: absolute; bottom: -1px; }
+
+.top-nav li a {
+    font-size: 1em;
+    letter-spacing: 0.7px;
+}
+
+.header {
+	
+}
+
 
 #logo {
 	display: inline-block;
-	font-family: "exo-regular";
+	font-family: $font-header;
 	font-size: 24px;
 	vertical-align: middle;
-	line-height: 50px;
 	margin-left: 30px;
 	float: left; 
+	margin-top: 4px;
+	
+	img { width: auto; height: 77px; }
 	
 	a {
 		span {
@@ -306,15 +338,14 @@ POSTS & CONTENT STYLES
 
 #guides-container {
 	width: 100%;
-	background-color: $light-gray;
-	padding: 30px 0 60px;
+	background-color: $dark-gray;
+	padding: 30px 0;
 	border-bottom: 3px solid $cyan;
 }
 
 #guides {
 	margin: auto;
 	width: 100%;
-	height: 120px;
 	text-align: center;
 }
 
@@ -323,7 +354,7 @@ POSTS & CONTENT STYLES
 	text-align: center;
 	margin: auto;
 	height: 100%;
-	border-right: 1px solid $border-gray;
+	border-right: 2px solid #c8c8c8;
 	display: inline-block;
 	
 	&:last-child {
@@ -340,14 +371,18 @@ POSTS & CONTENT STYLES
 	span {
 		color: $cyan;
 		display: block;
-		font-family: "exo-regular";
+		font-family: $font-header;
 		
 		&.guide-title {
 			margin-top: 5px;
+			font-size: 24px;
+			margin-top: 5px;
+			text-transform: uppercase;
 		}
 		
 		&.guide-description {
-			font-size: 12px;
+			color: #666464;
+			font-size: 14px;
 		}
 	}
 }
@@ -379,7 +414,7 @@ POSTS & CONTENT STYLES
 
 		.single-title {}
 
-		.page-title { color: white; }
+		.page-title {}
 
 		.entry-title {}
 
@@ -720,7 +755,7 @@ COMMENT STYLES
 				text-decoration: none;
 
 				&:hover {
-					text-decoration: underline;
+					text-decoration: none;
 				}
 
 			}
@@ -987,10 +1022,21 @@ PRODUCT CONTAINER and BANNER styles
 *********************/
 
 .products-container {
-    display: block;
+    display: inline-block;
     margin: 75px 0 45px;
     text-align: center;
     width: 100%;
+		
+		h1 { 
+			color: white;
+			font-size: 36px;
+			margin: 0 auto 30px;
+			text-align: left;
+			width: 991px;
+			font-family: $font-header;
+		}
+		
+		h1 .tagline { font-size: 20px; }
 }
 
 .banner-background {
@@ -1001,15 +1047,37 @@ PRODUCT CONTAINER and BANNER styles
     border-bottom: 3px solid #66bfbd;
 }
 
+.banner-frontpage {
+	width: 100%;
+	padding-bottom: 35%;
+	position: relative;
+	
+	.tagline { 
+		background-color: rgba(0, 0, 0, 0.3);
+		bottom: 15%;
+		color: white;
+		font-size: 41px;
+		font-weight: lighter;
+		letter-spacing: 1px;
+		padding: 17px 27px 17px 70px;
+		position: absolute;
+		right: 10%;
+		font-family: $font-header;
+		cursor: default;
+	}
+}
+
+
+
 .page-banner  {
 	background-image: url("../images/background-forest.jpg");
 	background-size: cover;
 	border-bottom: 3px solid $cyan;
-	position: absolute;
+	//position: absolute;
 	width: 100%;
 	min-height: 280px;
 	z-index: -10;
-	top: 0;
+	//top: 0;
 }
 
 
@@ -1032,6 +1100,19 @@ TANKSTATION styles
 	text-align: left;
 	vertical-align: top;
 	padding-bottom: 65px;
+	border-radius: 0 0 20px 20px; 
+	
+	> div { background-color: white; }
+	
+	&.gray {
+		background-color: $product-gray;
+	}
+	&.blue {
+		background-color: $product-blue;
+	}
+	&.green {
+		background-color: $product-green;
+	}
 	
 	.price-table-header {
 		color: $cyan;
@@ -1040,14 +1121,14 @@ TANKSTATION styles
 		width: 100%;
 		min-height: 65px;
 		line-height: 65px;
-		border-bottom: 1px solid $border-gray;
+		border-bottom: 1px solid $light-gray;
 		
 		&.slim {
 			min-height: 52px;
 			line-height: 2px;
-			border-top: 5px solid $product-gray;
+			margin-top: 5px;
 			
-			h3 {
+			h2 {
 				font-size: 1em;
 				margin-top: 10px;
 				margin-bottom: 10px;
@@ -1058,28 +1139,19 @@ TANKSTATION styles
 			display: inline-block;
 			vertical-align: middle;
 			line-height: normal;
-			font-family: exo-regular;
+			font-family: $font-header;
 		}
 	}
 	
 	.price-table-price-row {
+		background-color: transparent;
 		color: $white;
 		text-align: center;
 		font-size: 30px;
 		width: 100%;
-		min-height: 80px;
-		line-height: 80px;
+		height: 100px;
+		line-height: 100px;
 		border-bottom: 1px solid $border-gray;
-		
-		&.gray {
-			background-color: $product-gray;
-		}
-		&.blue {
-			background-color: $product-blue;
-		}
-		&.green {
-			background-color: $product-green;
-		}
 	}
 	
 	.price-table-description {
@@ -1087,7 +1159,8 @@ TANKSTATION styles
 		min-height: 80px;
 		background-color: $white;
 		border-bottom: 1px solid $border-gray;
-		padding: 10px 20px;
+		padding: 20px 30px 30px;
+		min-height: 124px;
 	}
 	
 	.price-table-cell {
@@ -1107,11 +1180,13 @@ TANKSTATION styles
 		
 		.price-table-cell-value {
 			display: block;
-			font-family: exo-light;
+			font-family: $font-header;
 			line-height: 22px;
 			width: 100%;
 			padding: 0 20px;
 			position: relative;
+			color: #1a8985;
+			font-size: 18px;
 		}
 		
 		
@@ -1125,10 +1200,10 @@ TANKSTATION styles
 		}
 		
 		.price-table-cell-info {
-			color: grey;
-			font-family: exo-light;
+			color: #5d5d5d;
+			font-family: $font-text;
 			font-size: 12px;
-			padding: 10px 20px;
+			padding: 10px 20px 0;
 			vertical-align: middle;
 			width: 100%;
 		}
@@ -1141,19 +1216,22 @@ TANKSTATION styles
 	}
 	
 	.price-from:before { 
-		color: #212121;
-		content: "Priser fra: ";
-		font-family: exo-bold;
-		font-size: 12px;
-		margin-right: 5px;
+			color: #212121;
+			content: "Priser fra: ";
+			font-family: $font-header;
+			font-size: 12px;
+			margin-right: 5px;
 	}
+
 	
 	.price-table-footer {
 		background-color: $cyan;
 		width: 100%;
 		min-height: 65px;
+		line-height: 65px;
 		position: absolute;
 		bottom: 0;
+		text-align: center;
 		
 		a {
 			text-decoration: none;
@@ -1162,16 +1240,22 @@ TANKSTATION styles
 		.price-value {
 			color: $white;
 			bottom: 8px;
-			font-family: exo-regular;
+			font-family: $font-header;
 			font-size: 30px;
 			position: absolute;
 			right: 50px;
 		}
 		
+		.price-table-footer-value {
+			font-size: 28px;
+			color: white;
+			font-family: $font-header;
+		}
+		
 		.price-readmore, .price-contact {
 			color: $white;
 			font-size: 30px;
-			font-family: exo-regular;
+			font-family: $font-header;
 			position: absolute;
 			bottom: 8px;
 			left: 30px;
@@ -1180,4 +1264,52 @@ TANKSTATION styles
 		}
 	}
 
+}
+
+/*********************
+CONTACT RIBBON styles
+*********************/
+
+.contact-ribbon {
+
+	display: block;
+	width: 100%;
+	background-color: $ribbon-gray;
+	border-bottom: 3px solid #66bfbd;
+	
+	.contact-ribbon-col {
+		float: left;
+		width: 49%;
+		margin-right: 2%;
+		
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	
+	.your-name, .your-subject, .firma, .your-email { float: left; width: 48%; margin-right: 2%; position: relative; }
+	.your-message { float: left; width: 100%; padding-right: 2%; position: relative; }
+	
+	.ribbon-send { 
+		background-color: #66bfbc;
+		border: 0 none;
+		color: white;
+		float: right;
+		margin-bottom: 20px;
+		margin-right: 2%;
+		padding: 6px 35px;
+	}
+	
+	.wpcf7-not-valid-tip { position: absolute; right: 10px; top: 10px; }
+	
+	h3 { font-family: $font-header; font-size: 20px; color: $shadow-blue; }
+	
+}
+
+.wpcf7-response-output {
+
+		background-color: #f6f6f6;
+    margin: 10px 0 19px !important;
+    padding: 10px 15px !important;
+    width: 98%;
 }

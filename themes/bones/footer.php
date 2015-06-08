@@ -9,7 +9,7 @@
 						<a class="guide" href="<?php the_sub_field('link'); ?>">
 							<img src="<?php the_sub_field('icon'); ?>" alt="<?php the_sub_field('title'); ?>" />
 							<span class="guide-title"><?php the_sub_field('title'); ?></span>
-							<span class="guide-description"></span>
+							<span class="guide-description"><?php the_sub_field('teaser'); ?></span>
 						</a>
 							
 						<?php endwhile; ?>

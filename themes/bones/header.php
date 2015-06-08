@@ -10,7 +10,9 @@
 
 		<?php // force Internet Explorer to use the latest rendering engine available ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+		
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro|PT+Sans' rel='stylesheet' type='text/css'>
+		
 		<title><?php wp_title(''); ?></title>
 
 		<?php // mobile meta (hooray!) ?>
@@ -45,12 +47,12 @@
 
 		<div id="container">
 
-			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+			<header id="header-wrap" class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
 				<div id="inner-header" class="cf">
 
 					<div id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
-						<a href="<?php echo home_url(); ?>" rel="nofollow"><?php echo add_span_to_title(get_bloginfo('name', 'display')); ?></a>
+						<a href="<?php echo home_url(); ?>" rel="nofollow"><img alt="Ativo - Web Development" src="wp-content/themes/bones/library/images/logo-ativo_web200t.png"></a>
 					</div>
 
 					<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">

@@ -39,20 +39,20 @@ select,
 textarea,
 .field {
   display: block;
-  height: 40px;
-  line-height: 40px;
+  height: 45px;
+  line-height: 45px;
   padding: 0 12px;
   margin-bottom: 14px;
   font-size: 1em;
   color: $text-color;
-  border-radius: 3px;
   vertical-align: middle;
   box-shadow: none;
   border: 0;
+	border-left: 6px solid $ativo-blue;
   width: 100%;
   max-width: 400px;
-  font-family: $lato;
-  background-color: $gray;
+  font-family: $font-text;
+  background-color: white;
   @include transition(background-color 0.24s ease-in-out);
 
   // a focused input (or hovered on)
@@ -112,6 +112,7 @@ textarea {
   max-width: 100%;
   min-height: 120px;
   line-height: 1.5em;
+	padding-top: 5px;
 }
 
 // selects
