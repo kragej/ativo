@@ -150,6 +150,7 @@ h2, .h2 {
 
 h3, .h3 {
 	font-size: 1.125em;
+	font-weight: bold;
 }
 
 h4, .h4 {
@@ -393,7 +394,7 @@ POSTS & CONTENT STYLES
 			margin-bottom: 1.5em;
 
 			header {
-				padding: 1.5em;
+				padding: 2.5em 1.5em 1.5em;
 			}
 
 			footer {
@@ -443,11 +444,14 @@ POSTS & CONTENT STYLES
 		.entry-content {
 			padding: 1.5em 1.5em 0;
 
+			h2 { margin: 30px 0 20px; } 
+			
+			h3 { margin: 30px 0 20px; } 
+			
 			p {
 				margin: 0 0 1.5em;
 			}
-
-
+			
 			ul, ol, table, dl {}
 
 			ul, ol {
@@ -458,7 +462,13 @@ POSTS & CONTENT STYLES
 
 			ul {
 
-				li {}
+				li {
+					background-image: url("../images/check.png");
+					background-position: 3px 5px;
+					background-repeat: no-repeat;
+					margin: 7px 0;
+					padding-left: 30px;
+				}
 
 			}
 
@@ -1034,6 +1044,7 @@ PRODUCT CONTAINER and BANNER styles
 			text-align: left;
 			width: 991px;
 			font-family: $font-header;
+			text-shadow: 1px 1px 10px #000000;
 		}
 		
 		h1 .tagline { font-size: 20px; }

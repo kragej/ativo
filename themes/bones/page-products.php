@@ -61,9 +61,10 @@
 										<?php endif; ?>
 									
 									<div class="price-table-footer">
-										<?php if(get_sub_field('product_link')) { ?><a href="<?php the_sub_field('product_link'); ?>"><?php } ?>
+										<?php if(get_sub_field('product_link')) { ?>
+										<a href="<?php the_sub_field('product_link'); ?>">
 											<span class="price-table-footer-value">Læs mere</span></a>
-										<?php if(get_sub_field('product_link')) { ?></a><?php } ?>
+										</a><?php } ?>
 									</div>
 									
 									</div>	
