@@ -52,7 +52,7 @@
 				<div id="inner-header" class="cf">
 
 					<div id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
-						<a href="<?php echo home_url(); ?>" rel="nofollow"><img alt="Ativo - Web Development" src="wp-content/themes/bones/library/images/logo-ativo_web200t.png"></a>
+						<a href="<?php echo home_url(); ?>" rel="nofollow"><img alt="Ativo - Web Development" src="http://ativo.dk/wp-content/themes/bones/library/images/logo-ativo_web200t.png"></a>
 					</div>
 
 					<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
@@ -71,6 +71,7 @@
 						)); ?>
 
 					</nav>
+					<div class="menu-toggle"></div>
 
 				</div>
 

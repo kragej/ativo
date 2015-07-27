@@ -39,6 +39,8 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 
+.menu-toggle { display: none; }
+
 .nav {
 	border: 0;
 	ul {
@@ -48,6 +50,13 @@ NAVIGATION STYLES
 	li {
 		float: left;
 		position: relative;
+    border-top: 0;
+    line-height: inherit;
+    margin-right: 21px;
+    padding: 0;
+    width: auto;
+		display: inline-block;
+
 
 		a {
 			border-bottom: 0;

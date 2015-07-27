@@ -133,6 +133,20 @@ query for retina AND a certain size if you want. Go Nuts.
 
 } // end of media query
 
+
+/*********************
+MOBILE OVERRIDES
+This is created by Asser to make the world an easier place to live, reduce stress and maybe even carbon emission 
+*********************/
+@media only screen and (max-width: 768px) {
+
+	// styles in 768up.scss
+	@import "breakpoints/768down";
+
+} // end of media query
+
+/*********************
+
 /*********************
 PRINT STYLESHEET
 Feel free to customize this. Remember to add things that won't make

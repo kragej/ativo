@@ -190,7 +190,7 @@ HEADER STYLES
 }
 
 #header-wrap nav li a { position: relative; }
-#header-wrap nav li a:hover:after { border-bottom: 3px solid $ativo-blue; width: 100%; content: ""; display: block; position: absolute; bottom: -1px; }
+#header-wrap nav li a:hover:after { border-bottom: 4px solid $ativo-blue; width: 100%; content: ""; display: block; position: absolute; bottom: -2px; }
 
 .top-nav li a {
     font-size: 1em;
@@ -233,6 +233,18 @@ the navs on the site so our css is cleaner
 and more scalable.
 */
 
+.menu-toggle { 
+	background-image: url("../images/menu_icon.png");
+	background-repeat: no-repeat;
+	display: block;
+	height: 25px;
+	position: absolute;
+	right: 30px;
+	top: 18px;
+	width: 29px;
+	cursor: pointer;
+}
+
 nav {
 	display: inline-block;
 	vertical-align: middle;
@@ -246,7 +258,13 @@ nav {
 
 	li {
 		
-		margin-right: 50px;
+    border-top: 1px solid #f2f2f2;
+    line-height: 50px;
+    margin-right: 50px;
+    padding: 0 37px;
+    width: 100%;
+		display: none;
+
 		
 		a {
 			display: block;

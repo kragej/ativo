@@ -116,6 +116,11 @@ function loadGravatars() {
 });*/
 
 
+//Menu mobile toggle
+jQuery('.menu-toggle').click(function() {
+	jQuery('.top-nav li').slideToggle("fast");
+});
+
 //Menu Shrink Function
 jQuery(document).ready(function($) {
   $('#header-wrap').data('size','big');
