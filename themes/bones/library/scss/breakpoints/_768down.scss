@@ -17,6 +17,10 @@ come into play. Have fun!
 MOBILE FIXES
 *********************/
 
+#header-wrap { height: 50px; }
+#inner-header { position: relative; }
+#logo img { height: 44px;}
+
 .guide {
     border-right: 2px solid #c8c8c8;
     display: inline-block;
@@ -25,7 +29,20 @@ MOBILE FIXES
     text-align: center;
     vertical-align: top;
     width: 32%;
+		padding: 6px;
 }
+.guide span.guide-title {
+	font-size: 16px;
+	margin-top: 8px;
+}
+.guide img { max-width: 90%; }
 
 .banner-frontpage { padding-bottom: 55%; }
 .page-banner { min-height: 209px; }
+
+.banner-frontpage .tagline {
+	font-size: 31px;
+	letter-spacing: 0;
+	text-align: left;
+	line-height: 42px;
+}

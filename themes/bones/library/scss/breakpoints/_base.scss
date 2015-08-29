@@ -164,6 +164,11 @@ h5, .h5 {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 }
+
+.front-title {
+    margin: 40px 0;
+    text-align: center;
+}
  
 /*********************
 HEADER STYLES
@@ -240,7 +245,7 @@ and more scalable.
 	height: 25px;
 	position: absolute;
 	right: 30px;
-	top: 18px;
+	top: 14px;
 	width: 29px;
 	cursor: pointer;
 }
@@ -366,6 +371,10 @@ POSTS & CONTENT STYLES
 	margin: auto;
 	width: 100%;
 	text-align: center;
+}
+
+.border-bottom {
+  border-bottom: 3px solid #66BFBD;
 }
 
 .guide {
@@ -1294,6 +1303,24 @@ TANKSTATION styles
 	}
 
 }
+
+/*********************
+REFENRENCES BOXES styles
+*********************/
+
+.reference-box {
+	margin-bottom: 35px;
+	padding: 0 20px;
+	text-align: left;
+}
+
+.reference-box img { 
+	border: 1px solid #a0a0a0;
+	height: auto;
+	padding: 1px;
+	width: 100%; 
+}
+
 
 /*********************
 CONTACT RIBBON styles

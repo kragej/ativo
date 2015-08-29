@@ -1,39 +1,48 @@
 <?php
 /*
- Template Name: Front Page Template
+ Template Name: References Template
  *
+
 */
 ?>
 
 <?php get_header(); ?>
+			
+			<div class="wrap cf">
+				
+				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			<div class="wrap-full banner-frontpage banner-background cf" style="<?php if( get_field('background_banner')){ echo "background-image: url('". get_field('background_banner')."')"; } ?>">
-			
-				<div class="tagline"><?php the_field('tagline'); ?></div>
-			
-			</div>
-			
-			<div class="wrap-full border-bottom cf">
-				<div class="wrap cf">
-					<h2 class="front-title">Nyeste Referencer</h2>
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-						<div class="cf">
-							<?php 
+					<div class="products-container cf">
+					
+					<?php 
+							// check if any products are created
 							if( have_rows('references') ):
+
+								// loop through products
 								while( have_rows('references') ): the_row(); ?>
-									<a href="http://ativo.dk/referencer/">
-										<div class="reference-box m-all t-1of2 d-1of2">
-											<img src="<?php the_sub_field('screenshot'); ?>" />
-											<h5><?php the_sub_field('title'); ?></h5>
-										</div>	
-									</a>
+									<div class="reference-box m-all t-1of2 d-1of2">
+										
+										<img src="<?php the_sub_field('screenshot'); ?>" />
+										
+										<h3><?php the_sub_field('title'); ?></h3>
+										
+										<p class="reference-description">
+											<?php the_sub_field('description'); ?>
+										</p>
+										
+										<p><a href="<?php the_sub_field('url'); ?>" target="_blank">Bes&oslash;g <?php the_sub_field('title'); ?></a></p>
+									
+									</div>	
+
 								<?php endwhile; ?>
 							<?php endif; ?>
-						</div>
-					<?php endwhile; endif; ?>
-				</div>
-			</div>
+						
+					</div>
 
+				<?php endwhile; endif; ?>
+
+			</div>
+			
 			<div id="content" style="display: none;"> <!-- hidden for now -->
 
 				<div id="inner-content" class="wrap cf">
@@ -66,9 +75,11 @@
 
 						</main>
 
+						<!--
+						<?php get_sidebar(); ?>
+						-->
 				</div>
 
 			</div>
-			
 
 <?php get_footer(); ?>
